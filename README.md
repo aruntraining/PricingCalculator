@@ -21,18 +21,17 @@ Duplicate books get grouped optimally to maximize discounts.
 
 Use an IDE or run from terminal:
 
-```bash
+
 mvn exec:java -Dexec.mainClass="com.bnp.bookpricingcalculator.BookDiscountCalculator"
-```
+
 
 ## 🧪 Run Tests
 
-```bash
+
 mvn clean install
-``
-```bash
+
 mvn test
-```
+
 
 
 
