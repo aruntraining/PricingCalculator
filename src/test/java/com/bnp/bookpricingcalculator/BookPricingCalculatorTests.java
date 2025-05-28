@@ -1,5 +1,6 @@
-package com.bnp.PricingCalculator;
+package com.bnp.bookpricingcalculator;
 
+import com.bnp.bookpricingcalculator.service.BookPricingCalculator;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -9,9 +10,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class BookDiscountCalculatorTests {
+class BookPricingCalculatorTests {
 
-	private final BookDiscountCalculator calc = new BookDiscountCalculator();
+	private final BookPricingCalculator calc = new BookPricingCalculator();
 	@Test
 	public void testEmptyBasket() {
 		assertEquals(0.0, calc.calculateTotalPrice(List.of()));

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bnp</groupId>
-	<artifactId>PricingCalculator</artifactId>
+	<artifactId>book-pricing-calculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>PricingCalculator</name>
 	<description>Demo project for Spring Boot</description>

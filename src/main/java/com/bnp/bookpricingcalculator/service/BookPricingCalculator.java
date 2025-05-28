@@ -1,20 +1,11 @@
-package com.bnp.PricingCalculator;
-
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+package com.bnp.bookpricingcalculator.service;
 
 import java.util.*;
 
-@SpringBootApplication
-public class BookDiscountCalculator {
+import static com.bnp.bookpricingcalculator.constants.BookPricingConstants.BOOK_PRICE;
+import static com.bnp.bookpricingcalculator.constants.BookPricingConstants.DISCOUNTS;
 
-    private static final double BOOK_PRICE = 50.0;
-    private static final Map<Integer, Double> DISCOUNTS = Map.of(
-            1, 0.0,
-            2, 0.05,
-            3, 0.10,
-            4, 0.20,
-            5, 0.25
-    );
+public class BookPricingCalculator {
 
     /**
      * Initial placeholder class to calculate total price.
@@ -44,11 +35,4 @@ public class BookDiscountCalculator {
         }
         return totalPrice;
     }
-
-
-    public static void main(String[] args) {
-
-
-    }
-
 }
