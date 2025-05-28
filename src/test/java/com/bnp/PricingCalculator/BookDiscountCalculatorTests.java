@@ -17,4 +17,10 @@ class BookDiscountCalculatorTests {
 		assertEquals(0.0, calc.calculateTotalPrice(List.of()));
 	}
 
+	@Test
+	public void testSingleBook() {
+		BookDiscountCalculator calc = new BookDiscountCalculator();
+		assertEquals(50.0, calc.calculateTotalPrice(List.of("Clean Code")));
+	}
+
 }
