@@ -1,5 +1,6 @@
 package com.bnp.bookpricingcalculator.service;
 
+import com.bnp.bookpricingcalculator.Validation.BookValidator;
 import com.bnp.bookpricingcalculator.constants.BookPricingConstants;
 
 import java.util.*;
@@ -26,15 +27,8 @@ public class BookPricingCalculator {
      */
     public double calculateTotalPrice(List<String> books) {
 
-        if (books == null) {
-            throw new IllegalArgumentException("Book list cannot be null.");
-        }
-
-        for (String book : books) {
-            if (!BookPricingConstants.VALID_BOOKS.contains(book)) {
-                throw new IllegalArgumentException("Invalid book title: " + book);
-            }
-        }
+        // Delegate validation
+        BookValidator.validate(books);
 
         // Calculate thr Book count By grouping
         try {

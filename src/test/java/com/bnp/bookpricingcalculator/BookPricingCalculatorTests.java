@@ -1,5 +1,6 @@
 package com.bnp.bookpricingcalculator;
 
+import com.bnp.bookpricingcalculator.Validation.BookValidator;
 import com.bnp.bookpricingcalculator.service.BookPricingCalculator;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,6 +9,7 @@ import java.util.List;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 class BookPricingCalculatorTests {
@@ -56,6 +58,29 @@ class BookPricingCalculatorTests {
 				"Working Effectively With Legacy Code"
 		);
 		assertEquals(320.0, calc.calculateTotalPrice(books), 0.01);
+	}
+
+	@Test
+	public void shouldThrowIfNullList() {
+		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+			BookValidator.validate(null);
+		});
+
+		assertEquals("Book list cannot be null.", exception.getMessage());
+	}
+
+	@Test
+	public void shouldThrowIfInvalidBook() {
+		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+			BookValidator.validate(List.of("Clean Code", "Not A Real Book"));
+		});
+
+		assertEquals("Invalid book title: Not A Real Book:", exception.getMessage());
+	}
+
+	@Test
+	public void shouldNotThrowIfValidBooks() {
+		BookValidator.validate(List.of("Clean Code", "The Clean Coder")); // Should not throw
 	}
 
 
