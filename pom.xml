@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bnp</groupId>
-	<artifactId>book-pricing-calculator</artifactId>
+	<artifactId>book-pricing</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PricingCalculator</name>
+	<name>book-pricing</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

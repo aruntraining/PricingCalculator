@@ -36,5 +36,27 @@ class BookPricingCalculatorTests {
 		assertEquals(expected, calc.calculateTotalPrice(books),0.01);
 	}
 
+	@Test
+	public void testFiveDifferentBooks() {
+		List<String> books = List.of(
+				"Clean Code", "The Clean Coder", "Clean Architecture",
+				"Test Driven Development by Example", "Working Effectively With Legacy Code"
+		);
+		double expected = 5 * 50 * 0.75;
+		assertEquals(expected, calc.calculateTotalPrice(books), 0.01);
+	}
+
+	@Test
+	public void testComplexBasketWithOptimization() {
+		List<String> books = List.of(
+				"Clean Code", "Clean Code",
+				"The Clean Coder", "The Clean Coder",
+				"Clean Architecture", "Clean Architecture",
+				"Test Driven Development by Example",
+				"Working Effectively With Legacy Code"
+		);
+		assertEquals(320.0, calc.calculateTotalPrice(books), 0.01);
+	}
+
 
 }
